@@ -43,8 +43,7 @@ return TicTacToeModelHolder.INSTANCE;
  * Classe interne selon le pattern singleton.
  */
  private static class TicTacToeModelHolder {
- private static final TicTacToeModel INSTANCE =
- new TicTacToeModel();
+ private static final TicTacToeModel INSTANCE =new TicTacToeModel();
  }
 
  public void restart() { ... }
