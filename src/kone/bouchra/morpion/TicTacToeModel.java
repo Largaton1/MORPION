@@ -1,5 +1,13 @@
 package kone.bouchra.morpion;
 
+import javafx.beans.binding.BooleanBinding;
+import javafx.beans.binding.NumberExpression;
+import javafx.beans.binding.StringExpression;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+
 public class TicTacToeModel {
  /**
  * Taille du plateau de jeu (pour être extensible).
@@ -30,7 +38,19 @@ public class TicTacToeModel {
  /**
  * Constructeur privé.
  */
-private TicTacToeModel() { ... }
+private TicTacToeModel() { 
+	//Tableau multidimentionnel representant le plateau de jeu
+	  board = new ObjectProperty[BOARD_HEIGHT][BOARD_WIDTH];
+	  //Tableau indiquant quelles cases ont été gagnées.
+      winningBoard = new BooleanProperty[BOARD_HEIGHT][BOARD_WIDTH];
+//Parcours lignes et colonnes
+      for (int i = 0; i < BOARD_HEIGHT; i++) {
+          for (int j = 0; j < BOARD_WIDTH; j++) {
+              board[i][j] = new SimpleObjectProperty<>(Owner.NONE);
+              winningBoard[i][j] = new SimpleBooleanProperty(false);
+          }
+      }
+}
 
  /**
  * @return la seule instance possible du jeu.
