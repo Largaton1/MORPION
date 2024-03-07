@@ -1,1 +1,10 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.hover-square {
+    /* Style pour une case survolée */
+    -fx-background-color: green; /* Couleur de fond jaune */
+}
+
+.hover-squarebis {
+    /* Style pour une case survolée */
+    -fx-background-color: red; /* Couleur de fond jaune */
+}
